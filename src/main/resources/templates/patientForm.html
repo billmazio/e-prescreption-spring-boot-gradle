@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link th:href="@{/css/webform.css}" href="/css/webform.css" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Patient Form</title>
+</head>
+
+<script type="text/javascript" src="/js/webform.js"></script>
+
+<form th:action="@{/patient/save}" method="post" th:object="${patient}">
+  <div class="container prescription-form">
+    <div class="row">
+      <div class="col-lg-12 col-12">
+        <form>
+          <h1>Electronic Prescription Form</h1>
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>Patient Name</span><input type="text" th:field="*{firstName}" name="firstName"/>
+              </label>
+            </div>
+
+
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>Patient Email</span><input id="email" type="text" th:field="*{email}"
+                                                 name="email"/>
+              </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>Patient Surname</span><input id="surname" type="text" th:field="*{lastName}"
+                                                   name="last_name"/>
+              </label>
+            </div>
+
+
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>Patient Phone</span><input id="phone" type="text" th:field="*{phone}"
+                                                 name="phone"/>
+              </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>AMKA*</span><input id="amka" type="text" th:field="*{amka}" name="amka" required/>
+                <span class="error_message">This field is required</span>
+              </label>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>Postal Code*</span><input id="pc" type="number" th:field="*{postalCode}"
+                                                name="postal_code" required/>
+              </label>
+              <span class="error_message">This field is required</span>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>Birth Date*</span><input id="birthDate" type="date" th:field="*{dateOfBirth}"
+                                               th:name="dateOfBirth"
+                                               required/>
+              </label>
+              <span class="error_message">This field is required</span>
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>Patient ID*</span><input id="patient_id" type="text" th:field="*{idCard}"
+                                               name="patient_id" required/>
+              </label>
+              <span class="error_message">This field is required</span>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>Mother's Name*</span><input id="mothersName" type="text" th:field="*{mothersName}"
+                                                  name="mothersName" required/>
+                <span class="error_message">This field is required</span>
+              </label>
+            </div>
+
+
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>City*</span><input id="city" type="text" th:field="*{city}" name="city" required/>
+                <span class="error_message">This field is required</span>
+              </label>
+            </div>
+
+          </div>
+
+
+          <div class="row">
+
+            <div class="col-lg-6 col-12">
+              <label>
+                <span>Father's Name*</span><input id="fathersName" type="text" th:field="*{fathersName}"
+                                                  name="fathersName" required/>
+                <span class="error_message">This field is required</span>
+              </label>
+            </div>
+
+          </div>
+          <div class="message">
+            <div class="col-lg-12 col-12">
+              <label class="message_btn_wrapper">
+                <input type="submit" value="Submit Form"/>
+                <div class="requiredMessage">Fields with * are mandatory</div>
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</form>
+
