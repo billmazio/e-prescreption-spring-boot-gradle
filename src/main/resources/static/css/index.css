@@ -1,0 +1,21 @@
+a.h2{
+   text-decoration:none !important;
+   cursor:pointer;
+   width:20%;
+   padding:20px;
+   border:2px solid black;
+}
+
+.links-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top:80px;
+    padding:20px;
+    justify-content:space-around;
+ }
+
+ .container-fluid{
+     position: fixed;
+     top: 30%;
+ }
