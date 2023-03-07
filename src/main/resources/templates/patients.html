@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title th:text="'Patients Found: '+ ${#lists.size(patientList)}">[0] Patients Found</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"/>
+  <link th:href="@{/css/patientstable.css}" href="/css/patientstable.css" rel="stylesheet" type="text/css" />
+<link th:href="@{/css/webform.css}" href="/css/webform.css" rel="stylesheet" type="text/css"/>
+ <link th:href="@{css/style.css}" href="/css/style.css" rel="stylesheet"  type="text/css"/>
+  <title>Update Patient</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-12 text-center mt-5 mb-5">
+      <h1 class="display-4">Patient List</h1>
+      <h5 class="font-weight-light" th:text="'Patients Found: '+${#lists.size(patientList)}">[0] Patients
+        Found</h5>
+    </div>
+  </div>
+  <div class="newPatient" style="padding:20px;"><a class="h2" href= "/patient/create">Add A New Patient +</a></div>
+  <div class="row">
+    <div class="col-xl-3" th:each="patient : ${patientList}">
+      <div class="card mr-2 mt-2 ml-2 mb-2"
+           style="width: 15rem; display: inline-block">
+        <div class="card-body">
+          <h5 class="card-title patient-name"><span th:text="${patient.firstName}">[First Name]</span> <span
+                  th:text="${patient.lastName}">[Last Name]</span></h5>
+          <h6 class="patient-id">
+            Patient ID: <span th:text="${patient.id}" th:remove="tag">[Patient ID]</span>
+          </h6>
+          <div class="card-text patient-details">
+            <address>
+              Email: <span th:text="${patient.email}" th:remove="tag">[email]</span><br>
+              Phone: <span th:text="${patient.phone}" th:remove="tag">[phone]</span><br>
+              City: <span th:text="${patient.city}" th:remove="tag">[city]</span><br>
+              AMKA: <span th:text="${patient.amka}" th:remove="tag">[AMKA]</span><br>
+
+           
+              Prescribed Drugs:
+              <ul>
+                <th:block th:each="drug : ${patient.drugs}">
+                  <li th:text="${drug.name}">[drug]</li>
+                </th:block>
+              </ul>
+            </address>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-primary"
+             th:href="@{/prescribeDrugs/{id}(id = ${patient.id})}">Add Prescription</a>
+        </div>
+        <div class="card-footer">
+        <a class="btn btn-primary" th:href="@{/patient/delete/{id}(id = ${patient.id})}">Delete</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
