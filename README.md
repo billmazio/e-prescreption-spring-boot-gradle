@@ -11,11 +11,23 @@ This is a project developed using the following technologies:
 
 ## Screenshots
 
+### Registration and Login
+
 ![Screenshot 1](https://user-images.githubusercontent.com/116730698/230726258-a7043c3a-042a-4019-abb5-92e54af8f23c.png)
+
+- Provides registration and login options.
+  
+### Registration Form
 
 ![Screenshot 2](https://user-images.githubusercontent.com/116730698/230726261-b7229f9f-0fb0-4966-b391-fd47b62f9041.png)
 
+- Allows users to register by filling out necessary details.
+  
+### Login Form
+
 ![Screenshot 3](https://user-images.githubusercontent.com/116730698/230726265-d3176463-7566-4ad1-9c4e-e212c10f5762.png)
+
+- Enables users to log in with their credentials.
 
 ![Screenshot 4](https://user-images.githubusercontent.com/116730698/230726268-8a3414ea-43c8-496f-88ff-009c549137a9.png)
 
